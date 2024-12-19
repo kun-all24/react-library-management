@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 
 
-# Online Library System.....
+# Online Library System
 
 This project is an **Online Library System** built using **React.js** and **Redux** for state management. It allows users to browse books by category, view book details, and add new books to the library.
 
