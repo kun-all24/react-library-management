@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from '../redux/booksSlice';
 
 const BrowseBooks = () => {
-  const { category } = useParams(); // Get the category from the URL
+  const { category } = useParams(); 
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.items); // All books from Redux state
-  const status = useSelector((state) => state.books.status); // API status
+  const books = useSelector((state) => state.books.items); 
+  const status = useSelector((state) => state.books.status); 
   const [filteredBooks, setFilteredBooks] = useState([]);
 
   // Fetch books if not already loaded

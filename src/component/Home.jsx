@@ -7,10 +7,10 @@ const categories = ['Fiction', 'Non-Fiction', 'Sci-Fi', 'Biography', 'Mystery', 
 const Home = () => {
   const [popularBooks, setPopularBooks] = useState([]);
 
-  // Fetch popular books from API (replace the URL with a real API)
+
   useEffect(() => {
     axios
-      .get('https://jsonplaceholder.typicode.com/posts?_limit=5') // Limiting to 5 for "popular books"
+      .get('https://jsonplaceholder.typicode.com/posts?_limit=10') 
       .then((response) => {
         setPopularBooks(
           response.data.map((book) => ({
