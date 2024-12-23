@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { fetchBooks } from '../redux/booksSlice';
 
 const categories = ['Fiction', 'Non-Fiction', 'Sci-Fi', 'Biography', 'Mystery', 'Romance'];
 
 const Home = () => {
-  const [popularBooks, setPopularBooks] = useState([]);
-
+  const dispatch = useDispatch();
+  const { items: popularBooks, status, error } = useSelector((state) => state.books);
 
   useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts?_limit=10') 
-      .then((response) => {
-        setPopularBooks(
-          response.data.map((book) => ({
-            id: book.id,
-            title: book.title,
-            author: `Author ${book.id}`,
-            description: book.body,
-          }))
-        );
-      })
-      .catch((error) => console.error('Error fetching popular books:', error));
-  }, []);
+    if (status === 'idle') {
+      dispatch(fetchBooks());
+    }
+  }, [dispatch, status]);
+
+  if (status === 'loading') {
+    return <p>Loading popular books...</p>;
+  }
+
+  if (status === 'failed') {
+    return <p>Error fetching popular books: {error}</p>;
+  }
 
   return (
     <div className="home">

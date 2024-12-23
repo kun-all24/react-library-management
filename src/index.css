@@ -264,15 +264,16 @@ p {
   margin-bottom: 1rem;
 }
 
+
 .popular-books a {
   text-decoration: none;
-  color: #6b4226; /* Chestnut for links */
+  color: #6b4226; 
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .popular-books a:hover {
-  color: #ffd700; /* Golden yellow on hover */
+  color: #ffd700; 
 }
 
 /* Responsive Design */

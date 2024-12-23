@@ -13,12 +13,12 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   }));
 });
 
-
 const booksSlice = createSlice({
   name: 'books',
   initialState: {
     items: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+    error: null,
   },
   reducers: {
     addBook: (state, action) => {
@@ -34,8 +34,9 @@ const booksSlice = createSlice({
         state.status = 'succeeded';
         state.items = action.payload;
       })
-      .addCase(fetchBooks.rejected, (state) => {
+      .addCase(fetchBooks.rejected, (state, action) => {
         state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });
