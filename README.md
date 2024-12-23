@@ -44,14 +44,15 @@ git clone https://github.com/your-username/online-library-system.git
 
 2. Install Dependencies
 
-cd online-library-system
+cd vite-project
 npm install
 
 
 
 3. Run the Application
 
-npm start
+npm start,
+npm run dev
 
 
 /src
