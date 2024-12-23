@@ -56,15 +56,14 @@ npm run dev
 
 
 /src
-  /components       # React components
-    Navbar.jsx      # Navigation bar
-    Home.jsx        # Home page
-    BrowseBooks.jsx # Browse books page
-    AddBook.jsx     # Add book form
-  /styles           # CSS styles
-  App.js            # Main application file
-  index.js          # Entry point
-db.json             # Dummy API data
+  /components       
+    Navbar.jsx      
+    Home.jsx        
+    BrowseBooks.jsx 
+    AddBook.jsx     
+  /styles           
+  App.js            
+  index.js                     
 
 
 
