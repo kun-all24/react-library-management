@@ -27,6 +27,7 @@ const AddBook = () => {
       <input name="category" placeholder="Category" onChange={handleChange} />
       <input name="rating" placeholder="Rating" onChange={handleChange} />
       <button type="submit">Add Book</button>
+    
     </form>
   );
 };
